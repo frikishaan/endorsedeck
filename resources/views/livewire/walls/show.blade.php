@@ -1,15 +1,7 @@
 <div>
 
-    @if (session()->has('message') && session()->has('type'))
-        <div class="container {{session('type')}} flex items-center text-white text-sm font-bold px-4 py-3 relative" role="alert" x-data="{ showAlert: true }" x-show="showAlert" x-init="setTimeout(() => showAlert = false, 5000)">
-            <p>
-                {{session('message')}}
-            </p>
-        </div>
-    @endif
-
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-        <button wire:click="$refresh" wire:loading.attr="disabled" class="py-2 px-2 flex justify-center items-center  bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  w-8 h-8 rounded-lg float-right">
+        <button wire:click="$refresh" wire:loading.attr="disabled" class="py-2 px-2 flex justify-center items-center  bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  w-8 h-8 rounded-lg float-right" title="Refresh">
             <i class="fas fa-sync-alt"></i>
         </button>
         <div class="inline-block min-w-full shadow rounded-lg overflow-hidden mt-4">

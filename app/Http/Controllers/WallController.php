@@ -30,6 +30,6 @@ class WallController extends Controller
     {
         $wall = Wall::findOrFail($id);
 
-        return view('walls.edit', compact('wall'));
+        return view('walls.edit', compact('wall', 'id'));
     }
 }

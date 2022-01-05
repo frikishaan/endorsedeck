@@ -13,7 +13,7 @@ Route::get('/walls/create', [WallController::class, 'create'])->name('walls.crea
 Route::get('/walls/{id}', [WallController::class, 'show'])->name('walls.show');
 Route::get('/walls/{id}/edit', [WallController::class, 'edit'])->name('walls.edit');
 
-Route::get('/{username}/wall/{id}', [FrontWallController::class, 'show']);
+Route::get('/{username}/wall/{id}', [FrontWallController::class, 'show'])->name('front.wall');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

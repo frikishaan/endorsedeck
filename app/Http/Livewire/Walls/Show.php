@@ -35,8 +35,10 @@ class Show extends Component
 
         $this->testimonialId = '';
         $this->confirmApproval = false;
-
-        flash_message('Testimonial approved successfully!', 'success');
+        $this->dispatchBrowserEvent(
+            'alert', ['type' => 'success',  'message' => 'Testimonial approved successfully!']
+        );
+        // flash_message('Testimonial approved successfully!', 'success');
     }
 
     public function approvalConfirmation(string $id)
