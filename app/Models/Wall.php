@@ -28,7 +28,7 @@ class Wall extends Model
 
     public function testimonials()
     {
-        return $this->hasMany(Testimonial::class);
+        return $this->hasMany(Testimonial::class, 'wall_id');
     }
 
 }

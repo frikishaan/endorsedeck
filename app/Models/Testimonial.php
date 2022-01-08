@@ -18,7 +18,7 @@ class Testimonial extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $fillable = [
-        'text', 'wall_id', 'user.name', 'user.email', 'user.avatar', 'is_approved'
+        'text', 'wall_id', 'user.name', 'user.email', 'user.avatar', 'user.title', 'is_approved'
     ];
 
     protected $cast = [
