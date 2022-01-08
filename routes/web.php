@@ -8,13 +8,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/walls', [WallController::class, 'index'])->name('walls.index');
-Route::get('/walls/create', [WallController::class, 'create'])->name('walls.create');
-Route::get('/walls/{id}', [WallController::class, 'show'])->name('walls.show');
-Route::get('/walls/{id}/edit', [WallController::class, 'edit'])->name('walls.edit');
+Route::prefix('/walls')->middleware(['auth'])->name('walls.')->group(function(){
 
+    Route::get('/', [WallController::class, 'index'])->name('index');
+    Route::get('/create', [WallController::class, 'create'])->name('create');
+    Route::get('/{id}', [WallController::class, 'show'])->name('show');
+    Route::get('/{id}/edit', [WallController::class, 'edit'])->name('edit');
+
+});
+
+// Embed Page
+Route::get('/embed/wall/{id}', [FrontWallController::class, 'embed'])->name('embed.wall');
+
+// Public pages
 Route::get('/{username}/wall/{id}/add', [FrontWallController::class, 'show'])->name('front.wall');
 Route::get('/{username}/wall/{id}', [FrontWallController::class, 'index'])->name('front.wall.index');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

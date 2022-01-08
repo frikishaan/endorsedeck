@@ -20,4 +20,11 @@ class WallController extends Controller
             'testimonials' => Testimonial::where('wall_id', $id)->get()
         ]);
     }
+
+    public function embed(string $id)
+    {
+        return view('embed.wall', [
+            'testimonials' => Testimonial::where('wall_id', $id)->get()
+        ]);
+    }
 }
