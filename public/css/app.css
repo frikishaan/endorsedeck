@@ -1194,6 +1194,9 @@ select {
 .shrink-0 {
   flex-shrink: 0;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 .origin-top-left {
   transform-origin: top left;
 }
@@ -1463,10 +1466,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1494,6 +1493,9 @@ select {
 }
 .p-8 {
   padding: 2rem;
+}
+.p-5 {
+  padding: 1.25rem;
 }
 .p-4 {
   padding: 1rem;
@@ -1590,6 +1592,9 @@ select {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .text-left {
   text-align: left;
@@ -1756,6 +1761,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1872,14 +1881,53 @@ select {
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
-.tooltip {
-  visibility: hidden;
-  position: absolute;
+.masonry {
+          -moz-column-gap: 1.5em;
+               column-gap: 1.5em;
+          -moz-column-count: 1;
+               column-count: 1;
+      }
+.break-inside {
+          -moz-column-break-inside: avoid;
+               break-inside: avoid;
+      }
+/* .tooltip {
+  @apply invisible absolute;
 }
+
 .has-tooltip:hover .tooltip {
-  visibility: visible;
-  z-index: 50;
+  @apply visible z-50;
 }
+
+.masonry {
+  column-count: 1;
+  column-gap: 2rem;
+}
+
+
+@screen sm {
+  .masonry{
+    column-count: 1;
+  }
+}
+
+@screen md {
+  .masonry{
+    column-count: 2;
+  }
+}
+
+@screen lg {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@screen xl {
+  .masonry {
+    column-count: 4;
+  }
+} */
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -2374,6 +2422,12 @@ select {
   .sm\:text-right {
     text-align: right;
   }
+      .sm\:masonry-sm {
+          -moz-column-gap: 1.5em;
+               column-gap: 1.5em;
+          -moz-column-count: 2;
+               column-count: 2;
+      }
 }
 @media (min-width: 768px) {
 
@@ -2412,6 +2466,12 @@ select {
   .md\:border-l {
     border-left-width: 1px;
   }
+      .md\:masonry-md {
+          -moz-column-gap: 1.5em;
+               column-gap: 1.5em;
+          -moz-column-count: 3;
+               column-count: 3;
+      }
 }
 @media (min-width: 1024px) {
 

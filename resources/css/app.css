@@ -1,13 +1,62 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-
-
 @import 'tailwindcss/utilities';
 
-.tooltip {
-    @apply invisible absolute;
+@layer utilities {
+  @variants responsive {
+      .masonry {
+          column-gap: 1.5em;
+          column-count: 1;
+      }
+      .masonry-sm {
+          column-gap: 1.5em;
+          column-count: 2;
+      }
+      .masonry-md {
+          column-gap: 1.5em;
+          column-count: 3;
+      }
+      .break-inside {
+          break-inside: avoid;
+      }
+
   }
-  
-  .has-tooltip:hover .tooltip {
-    @apply visible z-50;
+}
+
+/* .tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+.masonry {
+  column-count: 1;
+  column-gap: 2rem;
+}
+
+
+@screen sm {
+  .masonry{
+    column-count: 1;
   }
+}
+
+@screen md {
+  .masonry{
+    column-count: 2;
+  }
+}
+
+@screen lg {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@screen xl {
+  .masonry {
+    column-count: 4;
+  }
+} */
