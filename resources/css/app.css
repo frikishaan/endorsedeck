@@ -23,40 +23,10 @@
   }
 }
 
-/* .tooltip {
+.tooltip {
   @apply invisible absolute;
 }
 
 .has-tooltip:hover .tooltip {
   @apply visible z-50;
 }
-
-.masonry {
-  column-count: 1;
-  column-gap: 2rem;
-}
-
-
-@screen sm {
-  .masonry{
-    column-count: 1;
-  }
-}
-
-@screen md {
-  .masonry{
-    column-count: 2;
-  }
-}
-
-@screen lg {
-  .masonry {
-    column-count: 3;
-  }
-}
-
-@screen xl {
-  .masonry {
-    column-count: 4;
-  }
-} */

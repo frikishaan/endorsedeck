@@ -996,6 +996,10 @@ select {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1073,6 +1077,9 @@ select {
 }
 .-mt-px {
   margin-top: -1px;
+}
+.mb-8 {
+  margin-bottom: 2rem;
 }
 .block {
   display: block;
@@ -1303,6 +1310,11 @@ select {
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1491,11 +1503,11 @@ select {
 .p-1 {
   padding: 0.25rem;
 }
-.p-8 {
-  padding: 2rem;
-}
 .p-5 {
   padding: 1.25rem;
+}
+.p-8 {
+  padding: 2rem;
 }
 .p-4 {
   padding: 1rem;
@@ -1590,11 +1602,11 @@ select {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
-.pt-8 {
-  padding-top: 2rem;
-}
 .pt-3 {
   padding-top: 0.75rem;
+}
+.pt-8 {
+  padding-top: 2rem;
 }
 .text-left {
   text-align: left;
@@ -1604,6 +1616,9 @@ select {
 }
 .text-right {
   text-align: right;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -1671,6 +1686,9 @@ select {
 }
 .leading-normal {
   line-height: 1.5;
+}
+.leading-none {
+  line-height: 1;
 }
 .tracking-widest {
   letter-spacing: 0.1em;
@@ -1749,6 +1767,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
@@ -1760,10 +1782,6 @@ select {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-.text-blue-400 {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -1891,43 +1909,14 @@ select {
           -moz-column-break-inside: avoid;
                break-inside: avoid;
       }
-/* .tooltip {
-  @apply invisible absolute;
+.tooltip {
+  visibility: hidden;
+  position: absolute;
 }
-
 .has-tooltip:hover .tooltip {
-  @apply visible z-50;
+  visibility: visible;
+  z-index: 50;
 }
-
-.masonry {
-  column-count: 1;
-  column-gap: 2rem;
-}
-
-
-@screen sm {
-  .masonry{
-    column-count: 1;
-  }
-}
-
-@screen md {
-  .masonry{
-    column-count: 2;
-  }
-}
-
-@screen lg {
-  .masonry {
-    column-count: 3;
-  }
-}
-
-@screen xl {
-  .masonry {
-    column-count: 4;
-  }
-} */
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -2339,6 +2328,10 @@ select {
     transform: var(--tw-transform);
   }
 
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:items-start {
     align-items: flex-start;
   }
@@ -2385,6 +2378,10 @@ select {
 
   .sm\:p-6 {
     padding: 1.5rem;
+  }
+
+  .sm\:p-4 {
+    padding: 1rem;
   }
 
   .sm\:px-6 {
@@ -2457,6 +2454,12 @@ select {
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:border-t-0 {
