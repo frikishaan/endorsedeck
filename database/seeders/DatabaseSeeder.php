@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\User::factory(10)->create();
         
-        Wall::factory(3)->create(['user_id' => $user->id])->each(function ($wall){
+        Wall::factory(3)->create(['user_id' => $user->id, 'username' => $user->username])->each(function ($wall){
             Testimonial::factory(20)->create(['wall_id' => $wall->_id]);
         });
     }
