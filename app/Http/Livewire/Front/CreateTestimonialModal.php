@@ -44,6 +44,7 @@ class CreateTestimonialModal extends Component
             'text' => $this->text,
             'user.name' => $this->name,
             'user.email' => $this->email,
+            'user.title' => $this->title,
             'user.avatar' => '',
             'wall_id' => $this->wallId,
             'is_approved' => false

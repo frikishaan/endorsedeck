@@ -25,7 +25,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody x-data="{open:null}">
                     @if (count($testimonials) > 0)
                         
                         @foreach ($testimonials as $testimonial)
@@ -39,6 +39,8 @@
                                         </div>
                                         <p class="text-gray-900 whitespace-no-wrap">
                                             {{$testimonial->user['name']}}
+                                            <br>
+                                            <span class="text-gray-500 text-sm">{{$testimonial->user['title']}}</span>
                                         </p>
                                     </div>
                                 </td>
@@ -69,14 +71,25 @@
                                     </span>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <button class="mr-4 has-tooltip" wire:click="approvalConfirmation('{{ $testimonial->_id }}')">
-                                        <span class='tooltip rounded shadow-lg p-1 bg-gray-900 text-gray-100 -mt-8'>Approve</span>
-                                        <i class="fas fa-check text-green-500"></i>
+                                    <button class="mr-4 has-tooltip"  x-on:click="open !== {{ $loop->index }} ? open = {{ $loop->index }} : open = null">
+                                        <span class='tooltip rounded shadow-lg p-1 bg-gray-900 text-gray-100 -mt-8'>View</span>
+                                        <i class="fas fa-eye text-blue-500"></i>
                                     </button>
+                                    @if(!$testimonial->is_approved)
+                                        <button class="mr-4 has-tooltip" wire:click="approvalConfirmation('{{ $testimonial->_id }}')">
+                                            <span class='tooltip rounded shadow-lg p-1 bg-gray-900 text-gray-100 -mt-8'>Approve</span>
+                                            <i class="fas fa-check text-green-500"></i>
+                                        </button>
+                                    @endif
                                     <button class=" has-tooltip" wire:click="deleteConfirmation('{{ $testimonial->_id }}')">
                                         <span class='tooltip rounded shadow-lg p-1 bg-gray-900 text-gray-100 -mt-8'>Delete</span>
                                         <i class="fas fa-trash-alt text-red-500"></i>
                                     </button>
+                                </td>
+                            </tr>
+                            <tr x-show="open == {{ $loop->index }}" x-transition style="display: none" class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <td colspan="5" class="p-8 border-t-0">
+                                    {{$testimonial->text}}
                                 </td>
                             </tr>
                         @endforeach
@@ -96,6 +109,45 @@
 
         </div>
     </div>
+
+    <!-- View you Modal -->
+    <x-jet-dialog-modal wire:model="displayingViewModal">
+        <x-slot name="title">
+            {{ __('Testimonial') }}
+        </x-slot>
+
+        <x-slot name="content" wire:model="viewTestimonial">
+            @if($viewTestimonial)
+                <div class="w-full mx-auto rounded-lg bg-white shadow p-5 text-gray-800 break-inside mb-6" style="max-width: 400px">
+                    <div class="w-full flex mb-4">
+                        <div class="overflow-hidden rounded-full w-12 h-12">
+                            <img src="{{$viewTestimonial->user['avatar'] == "" ? 'https://ui-avatars.com/api/?name='. $viewTestimonial->user['name'] .'&color=7F9CF5&background=EBF4FF' : $viewTestimonial->user['avatar'] }}" alt="">
+                        </div>
+                        <div class="flex-grow pl-3">
+                            <h6 class="font-bold text-md">{{$viewTestimonial->user['name']}}</h6>
+                            <p class="text-xs text-gray-600">{{$viewTestimonial->user['title']}}</p>
+                        </div>
+                        <div class="w-12 text-right">
+                            <i class="mdi mdi-twitter text-blue-400 text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="w-full mb-4">
+                        <p class="text-sm">
+                            {{$viewTestimonial->text}}
+                        </p>
+                    </div>
+                </div>
+            @endif
+        </x-slot>
+
+        <x-slot name="footer">
+
+            <x-jet-secondary-button wire:click="$set('displayingViewModal', false)" wire:loading.attr="disabled">
+                {{ __('Close') }}
+            </x-jet-secondary-button>
+
+        </x-slot>
+    </x-jet-dialog-modal>
 
     <!-- Delete testimonial Confirmation Modal -->
     <x-jet-dialog-modal wire:model="confirmDeletion">

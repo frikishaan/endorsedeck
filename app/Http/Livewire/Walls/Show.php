@@ -12,8 +12,15 @@ class Show extends Component
 
     public string $wallId;
     public string $testimonialId;
+    public ?Testimonial $viewTestimonial;
     public bool $confirmDeletion;
     public bool $confirmApproval;
+    public bool $displayingViewModal = false;
+
+    public function mount()
+    {
+        $this->viewTestimonial = null;
+    }
 
     public function render()
     {
@@ -25,6 +32,13 @@ class Show extends Component
     public function getData()
     {
         return Testimonial::where('wall_id', $this->wallId)->orderBy('created_at')->paginate(5);
+    }
+
+    public function showTestimonial(string $id)
+    {
+        $this->viewTestimonial = Testimonial::find($id)->first();
+
+        $this->displayingViewModal = true;
     }
 
     public function approve()
