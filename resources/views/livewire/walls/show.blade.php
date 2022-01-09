@@ -34,7 +34,7 @@
                                     <div class="flex items-center">
                                         <div class="mr-4">
                                             <a href="#" class="block relative">
-                                                <img alt="profil" src="https://ui-avatars.com/api/?name={{$testimonial->user['name']}}&color=7F9CF5&background=EBF4FF" class="mx-auto object-cover rounded-full h-10 w-10 "/>
+                                                <img alt="{{$testimonial->user['name']}}" src="@if($testimonial->user['avatar']) {{url('storage/images/' . $testimonial->user['avatar'])}}  @else https://ui-avatars.com/api/?name={{$testimonial->user['name']}}&color=7F9CF5&background=EBF4FF @endif" class="mx-auto object-cover rounded-full h-10 w-10 "/>
                                             </a>
                                         </div>
                                         <p class="text-gray-900 whitespace-no-wrap">

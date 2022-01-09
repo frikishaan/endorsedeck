@@ -40,6 +40,16 @@
                     <x-jet-input wire:model.lazy="email" id="email" class="block mt-1 w-full" type="email" required />
                 </div>
 
+                <div>
+                    <x-jet-label for="email" value="{{ __('Your avatar') }}"/>
+                    <x-jet-input wire:model.lazy="avatar" id="avatar" class="block mt-1 w-full" type="file" required />
+                    @if ($avatar)
+                        <br>
+                        Preview:
+                        <img src="{{ $avatar->temporaryUrl() }}" height="100px" width="100px">
+                    @endif
+                </div>
+
             </form>
         </x-slot>
 
