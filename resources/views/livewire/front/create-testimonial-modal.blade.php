@@ -29,6 +29,11 @@
                     <x-jet-label for="name" value="{{ __('Your Name') }}" class="requried" />
                     <x-jet-input wire:model.lazy="name" id="name" class="block mt-1 w-full" type="text" autofocus autocomplete="name" />
                 </div>
+                
+                <div class="mt-4">
+                    <x-jet-label for="title" value="{{ __('Title/Profession') }}" class="requried" />
+                    <x-jet-input wire:model.lazy="title" id="title" class="block mt-1 w-full" type="text" autofocus autocomplete="title" />
+                </div>
 
                 <div class="mt-4">
                     <x-jet-label for="email" value="{{ __('Your Email') }}" class="required"/>
@@ -54,14 +59,14 @@
     <!-- Thank you Modal -->
     <x-jet-dialog-modal wire:model="displayingThankyouModal">
         <x-slot name="title">
-            {{ __('Submission successful') }}
+            {{ __('') }}
         </x-slot>
 
         <x-slot name="content">
-            <h1>
+            <h1 class="text-center text-xl text-bold">
                 {{$wall->thankyou_page['title']}}
             </h1>
-            <p>
+            <p class="text-center mt-4">
                 {{$wall->thankyou_page['message']}}
             </p>
         </x-slot>

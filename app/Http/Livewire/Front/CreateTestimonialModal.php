@@ -14,12 +14,13 @@ class CreateTestimonialModal extends Component
     public $displayingFormModal = false;
     public $displayingThankyouModal = false;
     public $show = true;
-    public $name, $email, $text;
+    public $name, $email, $text, $title;
 
     protected $rules = [
         'text' => 'required|min:10',
         'name' => 'required|min:3',
-        'email' => 'required|email' 
+        'email' => 'required|email',
+        'title' => 'required|min:3'
     ];
 
     public function mount()
@@ -27,6 +28,7 @@ class CreateTestimonialModal extends Component
         $this->wall = Wall::where('_id', $this->wallId)
             ->where('username', $this->username)
             ->first();
+            // dd($this->wall);
     }
 
     public function render()
@@ -49,10 +51,5 @@ class CreateTestimonialModal extends Component
 
         $this->displayingFormModal = false;
         $this->displayingThankyouModal = true;
-    }
-
-    public function reset(...$properties)
-    {
-        
     }
 }

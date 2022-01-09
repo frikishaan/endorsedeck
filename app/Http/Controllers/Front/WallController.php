@@ -17,7 +17,9 @@ class WallController extends Controller
     public function index(string $username, string $id)
     {
         return view('front.walls.index', [
-            'testimonials' => Testimonial::where('wall_id', $id)->get()
+            'testimonials' => Testimonial::where('wall_id', $id)->where('is_approved', true)->get(),
+            'id' => $id,
+            'username' => $username
         ]);
     }
 

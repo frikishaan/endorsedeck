@@ -5,7 +5,9 @@
                 <x-jet-authentication-card-logo />
             </div>
 
-            <div class="masonry sm:masonry-sm md:masonry-md p-8">
+            <livewire:front.create-testimonial-modal :wallId="$id" :username="$username"/>
+
+            <div class="masonry sm:masonry-sm md:masonry-md p-8 mt-8">
                 @foreach ($testimonials as $testimonial)
                     <div class="w-full mx-auto rounded-lg bg-white shadow p-5 text-gray-800 break-inside mb-6" style="max-width: 400px">
                         <div class="w-full flex mb-4">
