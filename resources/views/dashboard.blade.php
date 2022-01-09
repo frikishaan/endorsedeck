@@ -73,7 +73,7 @@
                                     <a href="{{route('walls.edit', ['id' => $wall->_id])}}" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="{{route('front.wall', ['id' => $wall->_id, 'username' => auth()->user()->username])}}" target="_blank" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                                    <a href="{{route('front.wall.index', ['id' => $wall->_id, 'username' => auth()->user()->username])}}" target="_blank" class="inline-flex p-2 text-blue-500 capitalize transition-colors duration-200 transform bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                                         <i class="fas fa-external-link-alt"></i>
                                     </a>
                                 </div>

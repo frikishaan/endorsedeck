@@ -21,7 +21,6 @@ Route::prefix('/walls')->middleware(['auth'])->name('walls.')->group(function(){
 Route::get('/embed/wall/{id}', [FrontWallController::class, 'embed'])->name('embed.wall');
 
 // Public pages
-Route::get('/{username}/wall/{id}/add', [FrontWallController::class, 'show'])->name('front.wall');
 Route::get('/{username}/wall/{id}', [FrontWallController::class, 'index'])->name('front.wall.index');
 
 // Dashboard
