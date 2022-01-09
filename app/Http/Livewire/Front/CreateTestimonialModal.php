@@ -63,5 +63,6 @@ class CreateTestimonialModal extends Component
         $this->displayingThankyouModal = true;
 
         $this->reset('text', 'name', 'email', 'avatar', 'title');
+        $this->resetErrorBag('text', 'name', 'email', 'avatar', 'title');
     }
 }
