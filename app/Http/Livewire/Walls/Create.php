@@ -33,12 +33,13 @@ class Create extends Component
         $this->validate();
 
         if($this->logo){
-            $this->url = explode('/', $this->logo->store('logos'))[1];
+            $this->url = explode('/', $this->logo->store('public/images'))[2];
         }
 
         $wall = Wall::create([
             'name' => $this->name,
             'user_id' => auth()->id(),
+            'username' => auth()->user()->username,
             'description' => $this->description ?? '',
             'logo' => $this->logo ? $this->url : '',
             'thankyou_page.title' => $this->thankyou_title ?? '',

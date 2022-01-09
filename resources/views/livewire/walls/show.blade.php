@@ -96,7 +96,7 @@
 
                     @else 
                         <tr>
-                            <td colspan="3">No testimonials found for this wall.</td>
+                            <td class="p-2 pt-4 text-center" colspan="5">No testimonials found for this wall.</td>
                         </tr>
                     @endif
                     

@@ -18,7 +18,7 @@ class Wall extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $fillable = [
-        'name', 'user_id', 'logo', 'description', 'thankyou_page.title', 'thankyou_page.message'
+        'name', 'user_id', 'username', 'logo', 'description', 'thankyou_page.title', 'thankyou_page.message'
     ];
 
     public function user()
