@@ -24,6 +24,7 @@ class WallFactory extends Factory
         return [
             'name' => $this->faker->word() . ' Wall',
             'description' => $this->faker->sentence($this->faker->numberBetween(8, 15)),
+            'logo' => 'devlogo.png',
             'thankyou_page.title' => $this->faker->sentence($this->faker->numberBetween(2,4)),
             'thankyou_page.message' => $this->faker->sentence($this->faker->numberBetween(10, 15))
         ];
