@@ -21,12 +21,14 @@ class TestimonialFactory extends Factory
      */
     public function definition()
     {
+        $gender = ['men', 'women'];
+
         return [
             'text' => $this->faker->sentence($this->faker->numberBetween(10, 25)),
             'user.name' => $this->faker->name(),
             'user.email' => $this->faker->safeEmail(),
             'user.title' => $this->faker->jobTitle(),
-            'user.avatar' => '',
+            'user.avatar' => 'https://randomuser.me/api/portraits/'. $gender[$this->faker->numberBetween(0, 1)] .'/'. $this->faker->numberBetween(1, 50) .'.jpg',
             'is_approved' => $this->faker->boolean(70)
         ];
     }
