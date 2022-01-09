@@ -2,10 +2,10 @@
     <div class="pt-4 bg-gray-100">
         <div class="min-h-screen flex flex-col items-center pt-3 sm:pt-0">
             <div>
-                <x-jet-authentication-card-logo />
+                <img src="{{ url('storage/images/' . $wall->logo) }}" alt="{{$wall->name}} logo" width="100px" height="100px" class="rounded-md">
             </div>
 
-            <livewire:front.create-testimonial-modal :wallId="$id" :username="$username"/>
+            <livewire:front.create-testimonial-modal :wallId="$wall->_id" :username="$wall->username"/>
 
             <div class="masonry sm:masonry-sm md:masonry-md p-8 mt-8">
                 @foreach ($testimonials as $testimonial)

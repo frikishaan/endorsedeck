@@ -22,7 +22,7 @@ class Edit extends Component
     protected $rules = [
         'wall.name' => 'required|min:3',
         'wall.description' => '',
-        // 'logo' => 'image|max:1024',
+        'logo' => 'nullable|image|max:1024',
         'wall.thankyou_page.title' => 'required',
         'wall.thankyou_page.message' => ''
     ];
@@ -45,21 +45,9 @@ class Edit extends Component
     {
         $this->validate();
 
-        // if($this->logo){
-        //     $this->url = explode('/', $this->logo->store('logos'))[1];
-        // }
-
-        // $wall = new Wall();
-        // $wall->_id = $wall->id;
-
-        // $wall = Wall::create([
-        //     'name' => $this->name,
-        //     'user_id' => auth()->id(),
-        //     'description' => $this->description ?? '',
-        //     'logo' => $this->logo ? $this->url : '',
-        //     'thankyou_page.title' => $this->thankyou_title ?? '',
-        //     'thankyou_page.message' => $this->thankyou_message ?? ''
-        // ]);
+        if($this->logo){
+            $this->wall->logo = explode('/', $this->logo->store('public/images'))[2];
+        }
 
         $this->wall->update();
 

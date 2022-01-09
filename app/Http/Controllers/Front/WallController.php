@@ -16,10 +16,11 @@ class WallController extends Controller
 
     public function index(string $username, string $id)
     {
+        $wall = Wall::select('name', 'username', 'logo')->where('_id', $id)->where('username', $username)->firstOrFail();
+
         return view('front.walls.index', [
             'testimonials' => Testimonial::where('wall_id', $id)->where('is_approved', true)->get(),
-            'id' => $id,
-            'username' => $username
+            'wall' => $wall
         ]);
     }
 

@@ -20,7 +20,7 @@ class Create extends Component
     protected $rules = [
         'name' => 'required|min:3',
         'description' => '',
-        'logo' => 'image|max:1024',
+        'logo' => 'nullable|image|max:1024',
         'thankyou_title' => 'required'
     ];
 
