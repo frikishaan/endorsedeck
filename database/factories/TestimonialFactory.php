@@ -28,7 +28,7 @@ class TestimonialFactory extends Factory
             'user.name' => $this->faker->name(),
             'user.email' => $this->faker->safeEmail(),
             'user.title' => $this->faker->jobTitle(),
-            'user.avatar' => 'https://randomuser.me/api/portraits/'. $gender[$this->faker->numberBetween(0, 1)] .'/'. $this->faker->numberBetween(1, 50) .'.jpg',
+            'user.avatar' => '',
             'is_approved' => $this->faker->boolean(70)
         ];
     }
