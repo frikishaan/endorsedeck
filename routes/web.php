@@ -4,10 +4,15 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Front\WallController as FrontWallController;
 use App\Http\Controllers\WallController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+if(env('APP_ENV') == "production"){
+    URL::forceScheme('https');
+}
 
 Route::prefix('/walls')->middleware(['auth'])->name('walls.')->group(function(){
 
