@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Walls;
 
 use App\Models\Wall;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -15,7 +16,7 @@ class Create extends Component
     public $logo;
     public $thankyou_title = 'Thank you!';
     public $thankyou_message = 'Thank you so much for your shoutout! It means a lot to me! 🙏';
-    private $url;
+    private $path;
 
     protected $rules = [
         'name' => 'required|min:3',
@@ -33,7 +34,7 @@ class Create extends Component
         $this->validate();
 
         if($this->logo){
-            $this->url = explode('/', $this->logo->store('public/images'))[2];
+            $this->path = $this->logo->storePublicly('images', 's3');
         }
 
         $wall = Wall::create([
@@ -41,7 +42,7 @@ class Create extends Component
             'user_id' => auth()->id(),
             'username' => auth()->user()->username,
             'description' => $this->description ?? '',
-            'logo' => $this->logo ? $this->url : '',
+            'logo' => $this->logo ? Storage::disk('s3')->url($this->path) : '',
             'thankyou_page.title' => $this->thankyou_title ?? '',
             'thankyou_page.message' => $this->thankyou_message ?? ''
         ]);

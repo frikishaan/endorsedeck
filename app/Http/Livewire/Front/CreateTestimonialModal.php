@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Front;
 
 use App\Models\Testimonial;
 use App\Models\Wall;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -18,7 +19,7 @@ class CreateTestimonialModal extends Component
     public $displayingThankyouModal = false;
     public $show = true;
     public $name, $email, $text, $title, $avatar;
-    public $url = '';
+    public $path = '';
 
     protected $rules = [
         'text' => 'required|min:10',
@@ -46,7 +47,7 @@ class CreateTestimonialModal extends Component
 
         if($this->avatar)
         {
-            $this->url = explode('/', $this->avatar->store('public/images'))[2];
+            $this->path = $this->avatar->storePublicly('images', 's3');
         }
 
         Testimonial::create([
@@ -54,7 +55,7 @@ class CreateTestimonialModal extends Component
             'user.name' => $this->name,
             'user.email' => $this->email,
             'user.title' => $this->title,
-            'user.avatar' => $this->url,
+            'user.avatar' => $this->path ? Storage::disk('s3')->url($this->path) : '',
             'wall_id' => $this->wallId,
             'is_approved' => false
         ]);

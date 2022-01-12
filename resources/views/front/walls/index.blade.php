@@ -2,7 +2,9 @@
     <div class="pt-4 bg-gray-100">
         <div class="min-h-screen flex flex-col items-center pt-3 sm:pt-0">
             <div>
-                <img src="{{ url('storage/images/' . $wall->logo) }}" alt="{{$wall->name}} logo" width="100px" height="100px" class="rounded-md">
+                @if ($wall->logo)
+                    <img src="{{ $wall->logo }}" alt="{{$wall->name}} logo" width="100px" height="100px" class="rounded-md">
+                @endif
             </div>
 
             <livewire:front.create-testimonial-modal :wallId="$wall->_id" :username="$wall->username"/>
@@ -12,7 +14,7 @@
                     <div class="w-full mx-auto rounded-lg bg-white shadow p-5 text-gray-800 break-inside mb-6" style="max-width: 400px">
                         <div class="w-full flex mb-4">
                             <div class="overflow-hidden rounded-full w-12 h-12">
-                                <img src="{{$testimonial->user['avatar'] == "" ? 'https://ui-avatars.com/api/?name='. $testimonial->user['name'] .'&color=7F9CF5&background=EBF4FF' : url('storage/images/' . $testimonial->user['avatar']) }}" alt="{{$testimonial->user['name']}}">
+                                <img src="{{$testimonial->user['avatar'] == "" ? 'https://ui-avatars.com/api/?name='. $testimonial->user['name'] .'&color=7F9CF5&background=EBF4FF' : $testimonial->user['avatar'] }}" alt="{{$testimonial->user['name']}}">
                             </div>
                             <div class="flex-grow pl-3">
                                 <h6 class="font-bold text-md">{{$testimonial->user['name']}}</h6>

@@ -18,6 +18,15 @@
                 <label for="logo">Logo</label>
                 <br>
                 <input type="file" id="logo" wire:model="logo">
+                @if ($logo)
+                    <br>
+                    Preview:
+                    <img src="{{ $logo->temporaryUrl() }}" height="100px" width="100px">
+                @else
+                    <br>
+                    Preview:
+                    <img src="{{ $wall->logo }}" height="100px" width="100px">
+                @endif
                 <br>
                 @error('logo') <span class="text-red-500">{{ $message }}</span> @enderror
             </div>

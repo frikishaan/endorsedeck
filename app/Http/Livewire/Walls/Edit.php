@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Walls;
 
 use App\Models\Wall;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -46,9 +47,10 @@ class Edit extends Component
         $this->validate();
 
         if($this->logo){
-            $this->wall->logo = explode('/', $this->logo->store('public/images'))[2];
+            $this->path = $this->logo->storePublicly('images', 's3');
+            $this->wall->logo = Storage::disk('s3')->url($this->path);
         }
-
+        
         $this->wall->update();
 
         return redirect()->route('walls.show', ['id' => $this->wall->_id]);
