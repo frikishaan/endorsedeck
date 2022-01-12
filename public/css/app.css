@@ -1201,9 +1201,6 @@ select {
 .max-w-6xl {
   max-width: 72rem;
 }
-.max-w-3xl {
-  max-width: 48rem;
-}
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -1517,10 +1514,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
-.bg-violet-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
-}
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
 }
@@ -1708,14 +1701,6 @@ select {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 .font-medium {
   font-weight: 500;
@@ -2493,6 +2478,11 @@ select {
     text-align: left;
   }
 
+  .sm\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -2501,11 +2491,6 @@ select {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
   }
       .sm\:masonry-sm {
           -moz-column-gap: 1.5em;
@@ -2657,10 +2642,6 @@ select {
 
   .xl\:mt-12 {
     margin-top: 3rem;
-  }
-
-  .xl\:max-w-4xl {
-    max-width: 56rem;
   }
 
   .xl\:max-w-5xl {

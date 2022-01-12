@@ -70,40 +70,40 @@
                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 bg-white mt-6  shadow-lg rounded-lg dark:bg-gray-800">
                     <div class="flex-shrink-0">
                         <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-chart-line fa-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
-                        Website Design
+                        A dedicated dashboard
                     </h3>
                     <p class="text-md  text-gray-500 dark:text-gray-300 py-4">
-                        Encompassing today’s website design technology to integrated and build solutions relevant to your business.
+                        You will have a simple & clean dashboard to manage all testimonials in one place. So easy to use even your mom knows how to do it!
                     </p>
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 mt-6 sm:mt-16 md:mt-20 lg:mt-24 bg-white shadow-lg rounded-lg dark:bg-gray-800">
                     <div class="flex-shrink-0">
                         <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                            <i class="fas fa-edit"></i>
+                            <i class="fas fa-award fa-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
-                        Branding
+                        All reviews at one place
                     </h3>
                     <p class="text-md text-gray-500 dark:text-gray-300 py-4">
-                        Share relevant, engaging, and inspirational brand messages to create a connection with your audience.
+                        All your favorite testimonials will be added to the Wall of Love. You can embed it to your website in under a minute. No coding knowledge required!
                     </p>
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mt-6  px-4 py-4 bg-white shadow-lg rounded-lg dark:bg-gray-800">
                     <div class="flex-shrink-0">
                         <div class="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                            <i class="fas fa-dashboard"></i>
+                            <i class="fas fa-star fa-2x"></i>
                         </div>
                     </div>
                     <h3 class="text-2xl sm:text-xl text-gray-700 font-semibold dark:text-white py-4">
-                        SEO Marketing
+                        Landing page
                     </h3>
                     <p class="text-md  text-gray-500 dark:text-gray-300 py-4">
-                        Let us help you level up your search engine game, explore our solutions for digital marketing for your business.
+                        Create a dedicated landing page for your business. Share the page link easily via email, social media, or even SMS. Setup can be done in two minutes.
                     </p>
                 </div>
             </div>
